@@ -1,0 +1,113 @@
+aid: rover
+name: Rover
+review:
+  question: Does Rover expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Rover does not publish any public API of
+    any kind - REST, GraphQL, webhook, Server-Sent Events, or WebSocket - so
+    there is no server-push transport on a Rover-owned public API to model.
+    Rover is a closed consumer/provider pet-care marketplace. Any realtime
+    messaging between pet owners and sitters happens inside Rover's own web and
+    mobile applications over private, undocumented internal endpoints that are
+    not offered to third-party developers.
+findings:
+  summary: |
+    Rover does not publish a documented public WebSocket API - or any public
+    developer API at all. Rover is the largest online pet-care marketplace
+    (boarding, house sitting, drop-in visits, doggy daycare, dog walking),
+    founded 2011 in Seattle. It traded on Nasdaq as ROVR until Blackstone
+    completed its ~$2.3B all-cash acquisition on 2024-02-27 ($11.00/share),
+    taking Rover private and delisting the stock. There is no developer portal,
+    no API reference, no OpenAPI, and no published authentication scheme for
+    external developers. Rover's public community even carries an unanswered
+    "Does Rover have a public API?" question. The only outward integration
+    program is a marketing affiliate program run through third-party affiliate
+    networks (Impact, CJ, Rakuten, Skimlinks, ShareASale) - referral tracking
+    links, not a data or booking API. The roverdotcom GitHub organization
+    publishes internal Django/Go engineering tooling but no consumer-facing API
+    or client. Unofficial third-party scrapers (e.g. Apify) exist but are not a
+    Rover-supported surface. Therefore there is no WebSocket (ws:// or wss://)
+    endpoint - and no documented API of any protocol - to review.
+  publicApiExists: false
+  openSource: |
+    Rover's public GitHub organization (github.com/roverdotcom) hosts internal
+    engineering utilities - django-inlinecss, django-prefetch-utils,
+    selenium-utility-belt, snagsby - but no open-source public API, API client,
+    or API specification for the Rover marketplace.
+  ownership: |
+    Rover Group, Inc. was acquired by Blackstone in an all-cash transaction of
+    approximately $2.3 billion, completed 2024-02-27. Stockholders received
+    $11.00 per share; Rover common stock ceased trading and was delisted from
+    Nasdaq, taking the company private.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public REST API or developer portal is documented on rover.com or in the help center.
+    - protocol: GraphQL
+      scheme: https
+      documented: false
+      note: No public GraphQL endpoint is documented.
+    - protocol: Webhook
+      scheme: https
+      documented: false
+      note: No public webhook / callback surface is offered to third-party developers.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in Rover's public materials as of the review date.
+  affiliateProgram:
+    exists: true
+    isApi: false
+    note: |
+      Rover runs a marketing affiliate program through third-party networks
+      (Impact, CJ/Commission Junction, Rakuten, Skimlinks, ShareASale) offering
+      up to ~15% commission on first bookings with a ~30-day cookie. This is a
+      referral/tracking program, not a data or booking API.
+  endpointsModeled: none
+  endpointsConfirmedRest: none
+  pricingModel: |
+    Marketplace service fees, not API pricing. Providers pay ~20% per booking
+    (~15% on house sitting; keep ~80%); pet owners pay an ~11% booking fee
+    capped at $50. California: 25% marketplace fee to providers plus 11% booking
+    fee to owners. UK: providers keep ~85% (95% on recurring services). Rates
+    vary by region, service type, and pilot programs.
+sources:
+  - url: https://www.rover.com
+    type: Website
+    note: Consumer/provider marketplace. No developer or API navigation anywhere on the site.
+  - url: https://www.rover.com/community/question/54724/does-rover-have-a-public-api/
+    type: Community
+    note: Public community question "Does Rover have a public API?" - no official public API is offered.
+  - url: https://github.com/roverdotcom
+    type: SourceCode
+    note: Internal engineering tooling only (Django/Go utilities); no public API, client, or spec.
+  - url: https://www.blackstone.com/news/press/blackstone-completes-acquisition-of-rover/
+    type: PressRelease
+    note: Blackstone completed acquisition of Rover for ~$2.3B on 2024-02-27; taken private and delisted from Nasdaq.
+  - url: https://www.rover.com/blog/press-release/blackstone-completes-acquisition-of-rover/
+    type: PressRelease
+    note: Rover's own announcement of the completed Blackstone acquisition.
+  - url: https://support.rover.com/hc/en-us/articles/205385304-What-are-the-service-fees
+    type: HelpCenter
+    note: Marketplace service-fee structure (provider/owner fees), Rover's actual monetization model.
+  - url: https://www.postaffiliatepro.com/affiliate-program-directory/rover-com-affiliate-program/
+    type: AffiliateProgram
+    note: Rover marketing affiliate program (up to ~15% commission) - a referral program, not an API.
+  - url: https://apify.com/easyapi/rover-pet-sitter-search-scraper/api
+    type: ThirdParty
+    note: Unofficial third-party scraper of Rover listings - not a Rover-supported API surface.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    Rover exposes no public API of any protocol, so there is no WebSocket
+    surface and no AsyncAPI document to create. The apis.yml was authored as an
+    honest stub that documents the absence of a public developer API, records
+    the Blackstone take-private, and captures the marketplace service-fee model
+    and the marketing affiliate program (which is not an API). No APIs, OpenAPI,
+    rate limits, or FinOps artifacts were fabricated.

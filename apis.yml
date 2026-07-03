@@ -1,0 +1,48 @@
+aid: rover
+url: https://raw.githubusercontent.com/api-evangelist/rover/refs/heads/main/apis.yml
+name: Rover
+kind: company
+description: >-
+  Rover is the world's largest online marketplace for pet care, connecting pet
+  parents with sitters and dog walkers for boarding, house sitting, drop-in
+  visits, doggy daycare, and dog walking. Founded in 2011 and headquartered in
+  Seattle, Rover was a publicly traded company (Nasdaq: ROVR) until Blackstone
+  completed its acquisition of Rover Group for approximately $2.3 billion on
+  February 27, 2024, taking the company private and delisting its stock. As of
+  this catalog entry, Rover does NOT publish a public, documented developer API
+  or a developer portal. Its platform is a closed consumer/provider marketplace;
+  the only outward-facing integration program is a marketing affiliate program
+  offered through third-party affiliate networks (Impact, CJ, Rakuten,
+  Skimlinks, ShareASale, etc.), not a data/booking API. Programmatic access to
+  Rover data today is only available via unofficial third-party web scrapers
+  (e.g. Apify), which are outside Rover's supported surface. This entry is an
+  honest stub documenting the absence of a public API; it should be revisited if
+  Rover launches a partner or developer API.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Pet Care
+- Dog Walking
+- Pet Sitting
+- Marketplace
+- Consumer
+- No Public API
+- Stub
+created: '2026-07-03'
+modified: '2026-07-03'
+specificationVersion: '0.19'
+common:
+- type: Website
+  url: https://www.rover.com
+- type: LinkedIn
+  url: https://www.linkedin.com/company/rover-com
+- type: HelpCenter
+  url: https://support.rover.com/hc/en-us
+- type: Blog
+  url: https://www.rover.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/roverdotcom
+- type: Plans
+  url: plans/rover-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

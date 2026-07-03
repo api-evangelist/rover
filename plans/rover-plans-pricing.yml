@@ -1,0 +1,149 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Rover
+providerId: rover
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Pet Care
+- Marketplace
+- Service Fees
+- Plans
+- No Public API
+description: >-
+  Rover has NO public developer API and therefore no API pricing. This document
+  captures Rover's actual monetization model as a two-sided pet-care
+  marketplace: per-booking service fees charged to service providers (sitters /
+  dog walkers) and a booking fee charged to pet owners. These are consumer
+  marketplace fees, not API access plans. Fees vary by region, service type, and
+  pilot programs; the figures below reflect publicly documented rates as of
+  mid-2026 and should be confirmed in the Rover help center during
+  reconciliation.
+notes: >-
+  There is no metered, tiered, or contract API plan because Rover exposes no
+  API. The "plans" below model the marketplace's booking economics only. Rover's
+  separate marketing affiliate program (up to ~15% commission on first bookings,
+  ~30-day cookie, run through third-party affiliate networks) is a referral
+  program, not an API plan, and is not modeled here.
+sources:
+- https://support.rover.com/hc/en-us/articles/205385304-What-are-the-service-fees
+- https://support.rover.com/hc/en-us/articles/207960126-How-much-does-it-cost-to-book-a-sitter-or-dog-walker
+- https://support.rover.com/hc/en-us/articles/12439190554132-Fees-and-rates-in-California
+- https://support-uk.rover.com/hc/en-gb/articles/360000909143-What-are-the-service-fees
+plans:
+- id: rover-provider-service-fee
+  name: Provider Service Fee (US, standard)
+  type: usage
+  description: >-
+    Standard service fee deducted from a service provider's (sitter or dog
+    walker) earnings on each booking in most US locations. Providers keep the
+    remainder of the rate they set.
+  entries:
+  - label: Provider Service Fee
+    name: provider_service_fee
+    type: percentage
+    metric: booking
+    limit: -1
+    timeFrame: booking
+    geo: us
+    unit: 1
+    price: 20% of provider's rate (provider keeps ~80%)
+    userMultiplied: false
+  elements:
+  - name: Boarding
+  - name: Dog Walking
+  - name: Drop-In Visits
+  - name: Doggy Daycare
+- id: rover-provider-service-fee-housesitting
+  name: Provider Service Fee (House Sitting)
+  type: usage
+  description: >-
+    Reduced service fee applied to house sitting bookings in most US locations.
+  entries:
+  - label: House Sitting Service Fee
+    name: provider_service_fee_housesitting
+    type: percentage
+    metric: booking
+    limit: -1
+    timeFrame: booking
+    geo: us
+    unit: 1
+    price: 15% of provider's rate (provider keeps ~85%)
+    userMultiplied: false
+  elements:
+  - name: House Sitting
+- id: rover-owner-booking-fee
+  name: Pet Owner Booking Fee (US)
+  type: usage
+  description: >-
+    Booking fee added at checkout on top of the provider's listed rate, paid by
+    the pet owner. Capped per booking.
+  entries:
+  - label: Owner Booking Fee
+    name: owner_booking_fee
+    type: percentage
+    metric: booking
+    limit: 50
+    timeFrame: booking
+    geo: us
+    unit: 1
+    price: ~11% of booking subtotal, capped at $50 USD
+    userMultiplied: false
+  elements:
+  - name: Booking Support
+  - name: Rover Guarantee
+  - name: Payment Processing
+- id: rover-california-fees
+  name: California Fees
+  type: usage
+  description: >-
+    California uses a split fee model: a marketplace fee charged to providers
+    plus a booking fee charged to pet owners.
+  entries:
+  - label: California Marketplace Fee (Provider)
+    name: ca_marketplace_fee
+    type: percentage
+    metric: booking
+    limit: -1
+    timeFrame: booking
+    geo: us-ca
+    unit: 1
+    price: 25% of provider's rate
+    userMultiplied: false
+  - label: California Booking Fee (Owner)
+    name: ca_booking_fee
+    type: percentage
+    metric: booking
+    limit: -1
+    timeFrame: booking
+    geo: us-ca
+    unit: 1
+    price: 11% booking fee at checkout
+    userMultiplied: false
+  elements:
+  - name: California-Specific Fee Structure
+- id: rover-uk-fees
+  name: United Kingdom Fees
+  type: usage
+  description: >-
+    UK providers keep a higher share of earnings than the US standard, with an
+    even higher share on recurring services.
+  entries:
+  - label: UK Provider Take-Home (Standard)
+    name: uk_provider_takehome
+    type: percentage
+    metric: booking
+    limit: -1
+    timeFrame: booking
+    geo: uk
+    unit: 1
+    price: provider keeps ~85% (recurring services ~95%)
+    userMultiplied: false
+  elements:
+  - name: UK Fee Structure
+  - name: Recurring Services Discount
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
