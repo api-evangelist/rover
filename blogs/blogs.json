@@ -1,0 +1,14 @@
+{
+  "repo": "rover",
+  "feeds": [
+    {
+      "source": "https://support.rover.com/hc/en-us",
+      "feed_url": "https://support.rover.com/hc/en-us",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 0
+}
