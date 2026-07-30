@@ -18,7 +18,19 @@ description: >-
   (e.g. Apify), which are outside Rover's supported surface. This entry is an
   honest stub documenting the absence of a public API; it should be revisited if
   Rover launches a partner or developer API.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Paid
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/rover.png
 tags:
 - Pet Care
 - Dog Walking
