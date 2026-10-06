@@ -51,9 +51,11 @@ tags:
 - No Public API
 - Stub
 created: '2026-07-03'
-modified: '2026-07-03'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 common:
+- url: https://www.rover.com/blog/feed/
+  type: BlogRSS
 - type: DomainSecurity
   url: security/rover-domain-security.yml
 - type: Website
