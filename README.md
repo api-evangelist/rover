@@ -1,4 +1,4 @@
-# Rover (rover)
+# Rover
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,60 +64,87 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Rover is the world's largest online marketplace for pet care, connecting pet parents with sitters and dog walkers for boarding, house sitting, drop-in visits, doggy daycare, and dog walking. Founded in 2011 and headquartered in Seattle, Rover operated as a publicly traded company (Nasdaq: ROVR) until **Blackstone completed its acquisition of Rover Group for approximately $2.3 billion on February 27, 2024**, taking the company private and delisting the stock ($11.00/share, all-cash).
+Rover is the world's largest online marketplace for pet care, connecting pet parents with sitters and dog walkers for boarding, house sitting, drop-in visits, doggy daycare, and dog walking. Founded in 2011 and headquartered in Seattle, Rover was a publicly traded company (Nasdaq: ROVR) until Blackstone completed its acquisition of Rover Group for approximately $2.3 billion on February 27, 2024, taking the company private and delisting its stock. As of this catalog entry, Rover does NOT publish a public, documented developer API or a developer portal. Its platform is a closed consumer/provider marketplace; the only outward-facing integration program is a marketing affiliate program offered through third-party affiliate networks (Impact, CJ, Rakuten, Skimlinks, ShareASale, etc.), not a data/booking API. Programmatic access to Rover data today is only available via unofficial third-party web scrapers (e.g. Apify), which are outside Rover's supported surface. This entry is an honest stub documenting the absence of a public API; it should be revisited if Rover launches a partner or developer API.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/rover/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/rover/refs/heads/main/apis.yml)
+**Areas:** Pet Care · Dog Walking · Pet Sitting · Marketplace · Consumer
 
-## API Access Model — No Public Developer API
+## Rover on APIs.io
 
-As of this catalog entry (2026-07-03), **Rover does not expose a public, documented developer API and does not operate a developer portal.** This was verified through several signals:
+Everything profiled for Rover is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/rover/](https://apis.io/providers/rover/)** — or go straight to one of the APIs or properties below.
 
-- **No developer portal / API reference.** There is no `developer.rover.com`, no published API documentation, and no OpenAPI/reference material on rover.com or in the help center.
-- **Community confirmation.** Rover's own community carries the unanswered question ["Does Rover have a public API?"](https://www.rover.com/community/question/54724/does-rover-have-a-public-api/) — no official public API is offered in response.
-- **GitHub org has no public API.** The [roverdotcom GitHub organization](https://github.com/roverdotcom) publishes internal engineering tooling (Django utilities such as `django-inlinecss`, `django-prefetch-utils`, `selenium-utility-belt`, `snagsby`) but **no consumer-facing API, API client, or API documentation**.
-- **Only a marketing affiliate program exists.** Rover runs an [affiliate program](https://www.postaffiliatepro.com/affiliate-program-directory/rover-com-affiliate-program/) through third-party networks (Impact, CJ/Commission Junction, Rakuten, Skimlinks, ShareASale) offering up to ~15% commission on first bookings. This is a marketing/referral program with tracking links — **not a data or booking API**.
-- **Third-party access is unofficial scraping only.** Programmatic access to Rover listings today is only available via unofficial third-party web scrapers (e.g. Apify's Rover pet-sitter scrapers) and browser-automation MCP connectors. These are **not** supported or sanctioned Rover APIs and can break or violate terms at any time.
+### Published properties
 
-If Rover exists in a partner integration ("Rover has previously *consumed* third-party APIs such as Bandwidth's communications platform"), that is inbound integration, not an outbound public API.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Because there is no real, documented, publicly accessible API surface, this entry intentionally **does not fabricate** logical APIs (Sitters, Bookings, Services, Reviews, Pets), OpenAPI definitions, rate limits, or FinOps artifacts. It should be revisited if Rover launches a partner or developer API.
+#### Security (1)
 
-## Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Pet Care
-- Dog Walking
-- Pet Sitting
-- Marketplace
-- Consumer
-- No Public API
-- Stub
+- [Rover Domain Security](https://apis.io/security/rover/rover-domain-security/)
 
-## Timestamps
+#### Plans and pricing (1)
 
-- **Created:** 2026-07-03
-- **Modified:** 2026-07-03
+Published plans, tiers and prices.
 
-## Pricing (Marketplace Service Fees, not API pricing)
+- [Rover Plans Pricing](https://apis.io/plans/rover/rover-plans-pricing/)
 
-Rover has no API pricing because it has no API. As a two-sided marketplace it monetizes through **service fees** on each booking (well-sourced, see [`plans/rover-plans-pricing.yml`](plans/rover-plans-pricing.yml)):
+## Where to find this API
 
-- **Sitters / dog walkers** pay a **~20% service fee** on most bookings (they keep ~80%); **~15%** on house sitting.
-- **Pet owners** pay an **~11% booking fee**, capped at **$50**, added at checkout.
-- **California** differs: a **25% marketplace fee** to providers plus an **11% booking fee** to owners.
-- **UK** differs: providers keep **~85%** (95% on recurring services).
-
-Fees vary by region, service type, and pilot programs; confirm current rates in the Rover help center.
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.rover.com)
-- [LinkedIn](https://www.linkedin.com/company/rover-com)
-- [Help Center](https://support.rover.com/hc/en-us)
 - [Blog](https://www.rover.com/blog/)
-- [GitHub Organization](https://github.com/roverdotcom)
-- [Plans](plans/rover-plans-pricing.yml)
+- [GitHub](https://github.com/roverdotcom)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 6.8** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 7.9 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/rover/](https://apis.io/providers/rover/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Rover: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/rover/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
